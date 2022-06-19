@@ -10,13 +10,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "client": {
-                    "name": "client",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
                 "Client": {
                     "name": "Client",
                     "isArray": false,
@@ -61,6 +54,13 @@ export const schema = {
                     "name": "status",
                     "isArray": false,
                     "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "date": {
+                    "name": "date",
+                    "isArray": false,
+                    "type": "AWSDate",
                     "isRequired": false,
                     "attributes": []
                 }
@@ -143,6 +143,20 @@ export const schema = {
                         "connectionType": "HAS_MANY",
                         "associatedWith": "clientID"
                     }
+                },
+                "email": {
+                    "name": "email",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "phone": {
+                    "name": "phone",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -203,17 +217,19 @@ export const schema = {
                 },
                 "contactMethods": {
                     "name": "contactMethods",
-                    "isArray": false,
+                    "isArray": true,
                     "type": "String",
                     "isRequired": false,
-                    "attributes": []
+                    "attributes": [],
+                    "isArrayNullable": true
                 },
                 "provisions": {
                     "name": "provisions",
-                    "isArray": false,
+                    "isArray": true,
                     "type": "String",
                     "isRequired": false,
-                    "attributes": []
+                    "attributes": [],
+                    "isArrayNullable": true
                 }
             },
             "syncable": true,
@@ -244,5 +260,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "67e5f256567435768f168540259d75ec"
+    "version": "fdde45580b112248ee33bb06599889e2"
 };

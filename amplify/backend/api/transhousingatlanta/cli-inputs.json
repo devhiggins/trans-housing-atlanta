@@ -3,12 +3,11 @@
   "serviceConfiguration": {
     "apiName": "transhousingatlanta",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "C:\\Users\\devin\\OneDrive\\Desktop\\trans-housing-atlanta\\website\\amplify\\backend\\api\\transhousingatlanta\\schema.graphql",
+    "gqlSchemaPath": "/tmp/amplify-7d083c6a-6037-4beb-8192-52351fd95764/amplify/backend/api/transhousingatlanta/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "expirationTime": 30,
-      "apiKeyExpirationDate": "2022-07-18T20:36:45.718Z",
-      "keyDescription": "api key description"
+      "keyDescription": "api key description",
+      "expirationTime": 30
     },
     "additionalAuthTypes": [
       {

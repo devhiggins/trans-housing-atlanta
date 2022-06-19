@@ -8,10 +8,10 @@ export const createRequest = /* GraphQL */ `
   ) {
     createRequest(input: $input, condition: $condition) {
       id
-      client
       clientID
       details
       status
+      date
       _version
       _deleted
       _lastChangedAt
@@ -22,6 +22,8 @@ export const createRequest = /* GraphQL */ `
         name
         pronouns
         needs
+        email
+        phone
         _version
         _deleted
         _lastChangedAt
@@ -51,10 +53,10 @@ export const updateRequest = /* GraphQL */ `
   ) {
     updateRequest(input: $input, condition: $condition) {
       id
-      client
       clientID
       details
       status
+      date
       _version
       _deleted
       _lastChangedAt
@@ -65,6 +67,8 @@ export const updateRequest = /* GraphQL */ `
         name
         pronouns
         needs
+        email
+        phone
         _version
         _deleted
         _lastChangedAt
@@ -94,10 +98,10 @@ export const deleteRequest = /* GraphQL */ `
   ) {
     deleteRequest(input: $input, condition: $condition) {
       id
-      client
       clientID
       details
       status
+      date
       _version
       _deleted
       _lastChangedAt
@@ -108,6 +112,8 @@ export const deleteRequest = /* GraphQL */ `
         name
         pronouns
         needs
+        email
+        phone
         _version
         _deleted
         _lastChangedAt
@@ -140,6 +146,8 @@ export const createClient = /* GraphQL */ `
       name
       pronouns
       needs
+      email
+      phone
       _version
       _deleted
       _lastChangedAt
@@ -162,6 +170,8 @@ export const updateClient = /* GraphQL */ `
       name
       pronouns
       needs
+      email
+      phone
       _version
       _deleted
       _lastChangedAt
@@ -184,6 +194,8 @@ export const deleteClient = /* GraphQL */ `
       name
       pronouns
       needs
+      email
+      phone
       _version
       _deleted
       _lastChangedAt

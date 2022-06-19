@@ -5,10 +5,10 @@ export const getRequest = /* GraphQL */ `
   query GetRequest($id: ID!) {
     getRequest(id: $id) {
       id
-      client
       clientID
       details
       status
+      date
       _version
       _deleted
       _lastChangedAt
@@ -19,6 +19,8 @@ export const getRequest = /* GraphQL */ `
         name
         pronouns
         needs
+        email
+        phone
         _version
         _deleted
         _lastChangedAt
@@ -50,10 +52,10 @@ export const listRequests = /* GraphQL */ `
     listRequests(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        client
         clientID
         details
         status
+        date
         _version
         _deleted
         _lastChangedAt
@@ -80,10 +82,10 @@ export const syncRequests = /* GraphQL */ `
     ) {
       items {
         id
-        client
         clientID
         details
         status
+        date
         _version
         _deleted
         _lastChangedAt
@@ -102,6 +104,8 @@ export const getClient = /* GraphQL */ `
       name
       pronouns
       needs
+      email
+      phone
       _version
       _deleted
       _lastChangedAt
@@ -126,6 +130,8 @@ export const listClients = /* GraphQL */ `
         name
         pronouns
         needs
+        email
+        phone
         _version
         _deleted
         _lastChangedAt
@@ -155,6 +161,8 @@ export const syncClients = /* GraphQL */ `
         name
         pronouns
         needs
+        email
+        phone
         _version
         _deleted
         _lastChangedAt

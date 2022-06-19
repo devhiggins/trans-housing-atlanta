@@ -5,10 +5,10 @@ export const onCreateRequest = /* GraphQL */ `
   subscription OnCreateRequest {
     onCreateRequest {
       id
-      client
       clientID
       details
       status
+      date
       _version
       _deleted
       _lastChangedAt
@@ -19,6 +19,8 @@ export const onCreateRequest = /* GraphQL */ `
         name
         pronouns
         needs
+        email
+        phone
         _version
         _deleted
         _lastChangedAt
@@ -45,10 +47,10 @@ export const onUpdateRequest = /* GraphQL */ `
   subscription OnUpdateRequest {
     onUpdateRequest {
       id
-      client
       clientID
       details
       status
+      date
       _version
       _deleted
       _lastChangedAt
@@ -59,6 +61,8 @@ export const onUpdateRequest = /* GraphQL */ `
         name
         pronouns
         needs
+        email
+        phone
         _version
         _deleted
         _lastChangedAt
@@ -85,10 +89,10 @@ export const onDeleteRequest = /* GraphQL */ `
   subscription OnDeleteRequest {
     onDeleteRequest {
       id
-      client
       clientID
       details
       status
+      date
       _version
       _deleted
       _lastChangedAt
@@ -99,6 +103,8 @@ export const onDeleteRequest = /* GraphQL */ `
         name
         pronouns
         needs
+        email
+        phone
         _version
         _deleted
         _lastChangedAt
@@ -128,6 +134,8 @@ export const onCreateClient = /* GraphQL */ `
       name
       pronouns
       needs
+      email
+      phone
       _version
       _deleted
       _lastChangedAt
@@ -147,6 +155,8 @@ export const onUpdateClient = /* GraphQL */ `
       name
       pronouns
       needs
+      email
+      phone
       _version
       _deleted
       _lastChangedAt
@@ -166,6 +176,8 @@ export const onDeleteClient = /* GraphQL */ `
       name
       pronouns
       needs
+      email
+      phone
       _version
       _deleted
       _lastChangedAt

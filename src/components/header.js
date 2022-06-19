@@ -39,6 +39,22 @@ const Header = ({ siteTitle }) => (
         )
       }
     </div>
+    <h3 style={{ margin: 0 }}>
+        <Link
+          to="/app/donate"
+          style={styles.headerTitle}
+        >
+          Donate
+        </Link>
+      </h3>
+      <h3 style={{ margin: 0 }}>
+        <Link
+          to="/app/contact"
+          style={styles.headerTitle}
+        >
+          Contact Us
+        </Link>
+      </h3>
   </div>
 )
 
