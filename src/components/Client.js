@@ -1,16 +1,19 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { useEffect, useState } from 'react'
-import { API } from 'aws-amplify'
+import { API, sectionFooterSecondaryContent } from 'aws-amplify'
 import * as queries from '../graphql/queries';
 import * as mutations from '../graphql/mutations';
 import * as subscriptions from '../graphql/subscriptions';
 import {getCurrentUser} from '../utils/auth'
 import { v4 as uuidv4 } from 'uuid';
+import RequestCreated from './RequestCreated';
+
 
 function Client() {
     const [requests, setRequests] = useState([]);
     const [details, setDetails] = useState('');
+    const [requestSubmitted, setRequestSubmitted]  = useState(false);
 
     useEffect(() => {
         const getRequests = async() => {
@@ -31,6 +34,7 @@ function Client() {
 	}, []);
 
     const submitRequest = async () => {
+        setRequestSubmitted(false);
         console.log(details);
         const requestDetails = {
             id: uuidv4(),
@@ -41,6 +45,7 @@ function Client() {
         
         const newRequest = await API.graphql({ query: mutations.createRequest, variables: {input: requestDetails}});
         console.log(newRequest);
+        setRequestSubmitted(true);
     }
   
   return (
@@ -52,7 +57,11 @@ function Client() {
         <h2>Create a Request</h2>
         <div>
             <input
-                onChange={(e) => setDetails(e.target.value)}
+                onChange={(e) => {
+                        setDetails(e.target.value);
+                        setRequestSubmitted(false);
+                    }
+                }
                 placeholder='details'
                 name='details'
                 value={details}
@@ -60,6 +69,7 @@ function Client() {
             />
         </div>
         <button onClick={submitRequest}>Submit Request</button>
+        {requestSubmitted && <RequestCreated details={details}/>}
       </div>
     )
   }
